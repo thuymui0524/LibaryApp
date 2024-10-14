@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:background="@color/white"> <!-- Đặt màu nền hoặc hình nền -->
+
+    <!-- Logo hoặc tên ứng dụng -->
+    <!-- Đặt hình ảnh logo của bạn -->
+
+    <ImageView
+        android:id="@+id/splash_logo"
+        android:layout_width="163dp"
+        android:layout_height="157dp"
+        android:src="@drawable/images" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="THƯ VIỆN SỐ HOU"
+        android:textSize="20sp"
+        android:textColor="#028AF6"
+        android:layout_marginTop="20dp"/>
+</LinearLayout>
