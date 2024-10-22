@@ -11,15 +11,10 @@
 
     <ImageView
         android:id="@+id/splash_logo"
-        android:layout_width="163dp"
-        android:layout_height="157dp"
-        android:src="@drawable/images" />
+        android:layout_width="262dp"
+        android:layout_height="359dp"
+        android:src="@drawable/logo"
+        />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="THƯ VIỆN SỐ HOU"
-        android:textSize="20sp"
-        android:textColor="#028AF6"
-        android:layout_marginTop="20dp"/>
+
 </LinearLayout>

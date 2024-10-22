@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/action_tailieugiay"
+        android:title="Tài liệu giấy" />
+    <item
+        android:id="@+id/action_tailieuin"
+        android:title="Tài liệu in" />
+    <item
+        android:id="@+id/action_edu_material"
+        android:title="Học liệu điện tử" />
+    <item
+        android:id="@+id/action_borrow"
+        android:title="Đăng ký mượn/trả" />
+
+    <item
+        android:id="@+id/action_logout"
+        android:title="Đăng xuất" />
+</menu>

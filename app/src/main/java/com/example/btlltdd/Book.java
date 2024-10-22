@@ -1,19 +1,19 @@
 package com.example.btlltdd;
 
 public class Book {
+    private int imageId;
     private String title;
-    private int imageResId;
 
-    public Book(String title, int imageResId) {
+    public Book(int imageId, String title) {
+        this.imageId = imageId;
         this.title = title;
-        this.imageResId = imageResId;
+    }
+
+    public int getImageId() {
+        return imageId;
     }
 
     public String getTitle() {
         return title;
-    }
-
-    public int getImageResId() {
-        return imageResId;
     }
 }

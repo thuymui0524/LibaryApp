@@ -14,6 +14,7 @@
         android:background="#EDEEEF">
 
         <ImageView
+            android:id="@+id/home_icon"
             android:layout_width="59dp"
             android:layout_height="match_parent"
             android:src="@drawable/img_1">
@@ -22,16 +23,27 @@
 
         <EditText
             android:id="@+id/searchEditText"
-            android:layout_width="match_parent"
+            android:layout_width="270dp"
             android:layout_height="54dp"
 
             android:background="#0055A8"
-            android:drawableLeft="@android:drawable/ic_menu_search"
-            android:hint="Search books, authors..."
+            android:textColor="@color/white"
+            android:hint="Tìm kiếm..."
             android:padding="10dp"
             android:textColorHint="@color/white"
 
             />
+
+        <ImageView
+            android:id="@+id/btnsearch"
+            android:layout_width="47dp"
+            android:layout_height="match_parent"
+            android:background="#0055A8"
+
+            android:src="@drawable/ic_search">
+
+        </ImageView>
+
     </LinearLayout>
 
     <!-- Banner -->
@@ -40,7 +52,16 @@
         android:layout_width="match_parent"
         android:layout_height="150dp"
         android:layout_marginTop="10dp" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="NỔI BẬT"
+        android:textColor="@color/blue"
+        android:textStyle="bold"
+        android:layout_marginTop="5dp"
+        >
 
+    </TextView>
     <!-- List of items (Books) -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/bookRecyclerView"
@@ -48,14 +69,16 @@
         android:layout_height="0dp"
         android:layout_weight="1"
 
-        android:scrollbars="vertical"/>
+        android:scrollbars="vertical"
+
+        />
     <!-- Navigation Bar -->
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
-        android:layout_width="wrap_content"
-        android:layout_height="67dp"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
         android:layout_gravity="bottom"
-        android:background="#FFFFFF"
+        android:background="#BFD9F2"
         app:menu="@menu/nav_menu" />
 
 

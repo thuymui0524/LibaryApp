@@ -12,25 +12,28 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BTLltdd"
         tools:targetApi="31">
-        <activity android:name=".M000SplashFrg"
+
+
+<!--        <activity android:name=".M000SplashFrg"-->
+<!--            android:exported="true">-->
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
+<!--        </activity>-->
+<!--        <activity android:name=".MainActivity"-->
+<!--            >-->
+
+<!--        </activity>-->
+        <activity android:name=".homeActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
-        <activity
-            android:name=".MainActivity"
-            >
+        <activity android:name=".SearchResultActivity"></activity>
 
-        </activity>
-        <activity android:name=".homeActivity"
-            >
-
-
-        </activity>
 
     </application>
 

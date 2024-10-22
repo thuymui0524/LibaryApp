@@ -2,59 +2,56 @@ package com.example.btlltdd;
 
 import android.os.Bundle;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
-import android.os.Bundle;
-import android.text.TextUtils;
+
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 import android.content.Intent;
 
-public class MainActivity extends AppCompatActivity {
+import com.example.btlltdd.database.DatabaseHelper;
+import com.example.btlltdd.database.User;
 
-    private EditText etUsername, etPassword;
-    private Button btnLogin;
-    private TextView tvErrorMessage;
+public class MainActivity extends AppCompatActivity {
+    EditText editTextUsername, editTextPassword;
+    Button btnLogin;
+    DatabaseHelper databaseHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
-        etUsername = findViewById(R.id.etUsername);
-        etPassword = findViewById(R.id.etPassword);
+        editTextUsername = findViewById(R.id.etUsername);
+        editTextPassword = findViewById(R.id.etPassword);
         btnLogin = findViewById(R.id.btnLogin);
-        tvErrorMessage = findViewById(R.id.tvErrorMessage);
-
-
+        databaseHelper = new DatabaseHelper(this);
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                handleLogin();
+                String username = editTextUsername.getText().toString().trim();
+                String password = editTextPassword.getText().toString().trim();
+
+
+                if (!username.isEmpty() && !password.isEmpty()) {
+                    boolean isValidUser = databaseHelper.checkUser(username, password);
+
+                    if (isValidUser) {
+
+                        Intent intent = new Intent(MainActivity.this, homeActivity.class);
+                        startActivity(intent);
+                        finish();
+                    } else {
+
+                        Toast.makeText(MainActivity.this, "Sai tên đăng nhập hoặc mật khẩu!", Toast.LENGTH_SHORT).show();
+                    }
+                } else {
+
+                    Toast.makeText(MainActivity.this, "Vui lòng nhập đầy đủ thông tin!", Toast.LENGTH_SHORT).show();
+                }
+
             }
         });
     }
 
-    private void handleLogin() {
-        String username = etUsername.getText().toString().trim();
-        String password = etPassword.getText().toString().trim();
-
-
-        if (TextUtils.isEmpty(username) || TextUtils.isEmpty(password)) {
-            tvErrorMessage.setText("tên đăng nhập và mật khẩu không được bỏ trống!");
-            tvErrorMessage.setVisibility(View.VISIBLE);
-        } else {
-            Toast.makeText(MainActivity.this, "Đăng nhập thành công!", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(MainActivity.this, homeActivity.class);
-                startActivity(intent);
-                finish();
-        }
-    }
 }
