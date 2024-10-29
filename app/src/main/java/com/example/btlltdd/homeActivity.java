@@ -169,7 +169,11 @@ public class homeActivity extends AppCompatActivity {
                 popupMenu.show();
             }
         });
-
+// code dung de them bottomNavigation vao trong LinearLayout
+        BottomNavigationFragment bottomNavigationFragment = new BottomNavigationFragment();
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.bottom_navigation_container, bottomNavigationFragment)
+                .commit();
     }
 
 

@@ -120,9 +120,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 //        db.close();
 //
 //        return count > 0; // Trả về true nếu tìm thấy người dùng
-        String query = "SELECT * FROM " + TABLE_USER + " WHERE " + COLUMN_USERNAME + "=" +username
-                    + "AND" +COLUMN_PASSWORD +"="+password;
-        Cursor cursor=db.rawQuery(query,null);
+        String query = "SELECT * FROM " + TABLE_USER + " WHERE " + COLUMN_USERNAME + "=?"
+                    + " AND " +COLUMN_PASSWORD +"=?";
+        Cursor cursor=db.rawQuery(query,new String[]{username, password});
         if(cursor.getCount() != 0){
             return true;
         }else{
